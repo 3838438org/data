@@ -303,6 +303,10 @@ export default class Relationship {
 
     this.members.forEach(unload);
     this.canonicalMembers.forEach(unload);
+
+    if (!this.isAsync) {
+      this.clear();
+    }
   }
 
   /*

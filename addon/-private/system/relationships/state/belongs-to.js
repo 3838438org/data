@@ -74,6 +74,13 @@ export default class BelongsToRelationship extends Relationship {
     }
   }
 
+
+  removeCompletelyFromInverse() {
+    super.removeCompletelyFromInverse();
+
+    this.inverseInternalModel = null;
+  }
+
   flushCanonical() {
     //temporary fix to not remove newly created records if server returned null.
     //TODO remove once we have proper diffing
